@@ -28,12 +28,13 @@ def is_palindrome(input):
         return True
 
     else:
-        first_char = input[0]
-        last_char = input[-1]
+        return input == reverse_string(input)
 
-        sub_input = input[1:-1]
-
-        return (first_char == last_char) and (is_palindrome(sub_input))
+def reverse_string(input):
+    if len(input) == 0:
+        return ''
+    else:
+        input[-1] + reverse_string(input[1:-1])
 
 
 # Test Cases
